@@ -3,8 +3,8 @@ const app = express();
 const { sequelize } = require("./database/db");
 const path = require("path");
 
-const router = require(path.join(__dirname, "Routes", "accounts"));
-const routerUser = require(path.join(__dirname, "Routes", "user"));
+const router = require(path.join(__dirname, "routes", "accounts"));
+const routerUser = require(path.join(__dirname, "routes", "user"));
 
 // connecting server to router
 app.use("/", router);
