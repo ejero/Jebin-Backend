@@ -14,8 +14,8 @@ jobs:
       - name: "Checkout git repo"
         uses: actions/checkout@v2
 
-      - name: CD backend
-        run: cd backend
+      # - name: CD backend
+      #   run: cd backend
 
       - name: set up node
         uses: actions/setup-node@v1
@@ -23,7 +23,7 @@ jobs:
           node-version: 20
 
       - name: Install backend dependencies
-        working-directory: backend
+        # working-directory: backend
         run: npm install
 
       # - name: List contents of the routes folder
