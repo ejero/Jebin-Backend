@@ -1,0 +1,40 @@
+name: Backend CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  backend:
+    name: Backend CI/CD
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout git repo"
+        uses: actions/checkout@v2
+
+      - name: CD backend
+        run: cd backend
+
+      - name: set up node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 20
+
+      - name: Install backend dependencies
+        working-directory: backend
+        run: npm install
+
+      # - name: List contents of the routes folder
+      #   run: ls -R routes
+
+      - name: Print current working directory
+        run: pwd
+
+      # - name: List contents of the current working directory
+      #   run: ls -R
+
+      - name: Test backend
+        working-directory: backend
+        run: npm run test
