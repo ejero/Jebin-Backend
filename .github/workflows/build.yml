@@ -36,15 +36,9 @@ jobs:
       #     mkdir -p ~/.ssh
       #     ssh-keyscan -H 74.207.246.181 >> ~/.ssh/known_hosts
 
-      # - name: Deploy to Linode server
-      #   env:
-      #     SSH_PRIVATE_KEY: ${{ secrets.SERVER_PASSWORD }}
-      #   run: |
+      - name: Deploy to Linode server
+        env:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: >
 
-      #     sshpass -p $SERVER_PASSWORD ssh root@74.207.246.181 'cd Jebin-Backend && git pull origin main && pm2 restart startServer.js'
-
-      - name: SSH to Linode
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.LINODE_HOSTNAME }}
-          key_path: ${{ secrets.LINODE_SSH_KEY}}
+          ssh root@74.207.246.181 'cd Jebin-Backend && git pull origin main && pm2 restart startServer.js'
