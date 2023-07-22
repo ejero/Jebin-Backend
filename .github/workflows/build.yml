@@ -31,10 +31,10 @@ jobs:
       - name: Test backend
         run: npm run test
 
-      - name: Add Linode server to known_hosts
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan -H 74.207.246.181 >> ~/.ssh/known_hosts
+      # - name: Add Linode server to known_hosts
+      #   run: |
+      #     mkdir -p ~/.ssh
+      #     ssh-keyscan -H 74.207.246.181 >> ~/.ssh/known_hosts
 
       - name: Deploy to Linode server
         env:
