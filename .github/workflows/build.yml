@@ -23,25 +23,16 @@ jobs:
           node-version: 20
 
       - name: Install backend dependencies
-        # working-directory: backend
         run: npm install
-
-      # - name: List contents of the routes folder
-      #   run: ls -R routes
 
       - name: Print current working directory
         run: pwd
 
-      # - name: List contents of the current working directory
-      #   run: ls -R
-
       - name: Test backend
-        # working-directory: backend
         run: npm run test
 
-  linode:
-    - name: Deploy to Linode
-      run: >
+      - name: Deploy to Linode
+        run: >
         
-        ssh root@74.207.246.181 'cd Jebin-Backend && git pull origin main && pm2 restart startServer.js'
+          ssh root@74.207.246.181 'cd Jebin-Backend && git pull origin main && pm2 restart startServer.js'
 
