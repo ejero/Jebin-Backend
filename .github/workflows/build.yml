@@ -48,4 +48,3 @@ jobs:
         with:
           host: ${{ secrets.LINODE_HOSTNAME }}
           key_path: ${{ secrets.LINODE_SSH_KEY}}
-          command: echo "Hello from Linode!"
