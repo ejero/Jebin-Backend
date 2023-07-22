@@ -37,6 +37,8 @@ jobs:
           ssh-keyscan -H 74.207.246.181 >> ~/.ssh/known_hosts
 
       - name: Deploy to Linode
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: >
 
           ssh root@74.207.246.181 'cd Jebin-Backend && git pull origin main && pm2 restart startServer.js'
