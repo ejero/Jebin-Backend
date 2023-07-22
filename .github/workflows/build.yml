@@ -36,7 +36,7 @@ jobs:
           mkdir -p ~/.ssh
           ssh-keyscan -H 74.207.246.181 >> ~/.ssh/known_hosts
 
-      - name: Deploy to Linode
+      - name: Deploy to Linode Server
         env:
           LINODE_SSH_KEY: ${{ secrets.LINODE_SSH_KEY }}
         run: >
