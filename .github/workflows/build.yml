@@ -46,6 +46,6 @@ jobs:
       - name: SSH to Linode
         uses: appleboy/ssh-action@master
         with:
-          hosts: ${{ secrets.LINODE_HOSTNAME }}
+          host: ${{ secrets.LINODE_HOSTNAME }}
           privateKey: ${{ secrets.LINODE_SSH_KEY}}
           command: echo "Hello from Linode!"
