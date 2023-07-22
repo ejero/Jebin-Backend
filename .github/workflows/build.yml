@@ -39,6 +39,6 @@ jobs:
       - name: Deploy to Linode server
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_PASSWORD }}
-        run: >
+        run: |
 
           sshpass -p $SERVER_PASSWORD ssh root@74.207.246.181 'cd Jebin-Backend && git pull origin main && pm2 restart startServer.js'
