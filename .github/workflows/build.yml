@@ -31,8 +31,12 @@ jobs:
       - name: Test backend
         run: npm run test
 
+      - name: Add Linode server to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H 128.192.123 >> ~/.ssh/known_hosts
+
       - name: Deploy to Linode
         run: >
-        
-          ssh root@74.207.246.181 'cd Jebin-Backend && git pull origin main && pm2 restart startServer.js'
 
+          ssh root@74.207.246.181 'cd Jebin-Backend && git pull origin main && pm2 restart startServer.js'

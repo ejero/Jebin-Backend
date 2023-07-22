@@ -11,7 +11,7 @@ const userRouter = express.Router();
 // Express validator
 const { check, validationResult } = require("express-validator");
 
-// Salt counts
+// Salt count
 const SALT_COUNT = 10;
 
 // adding middleware
