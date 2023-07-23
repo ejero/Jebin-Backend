@@ -7,6 +7,7 @@ const router = require(path.join(__dirname, "routes", "accounts"));
 const routerUser = require(path.join(__dirname, "routes", "user"));
 
 // connecting server to router
+// Testing comment
 app.use("/", router);
 app.use("/user", routerUser);
 
