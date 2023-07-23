@@ -7,7 +7,7 @@ on:
 
 jobs:
   ssh:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: SSH to server
         uses: appleboy/ssh-action@v0.1.10
