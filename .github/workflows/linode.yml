@@ -10,7 +10,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: SSH to server
-        uses: appleboy/ssh-action@v3
+        uses: appleboy/ssh-action@v0.1.10
         with:
           hostname: 74.207.246.181
           username: root
