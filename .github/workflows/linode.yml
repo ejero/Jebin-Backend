@@ -1,0 +1,18 @@
+name: SSH to Linode Ubuntu Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ssh:
+    runs-on: windows-latest
+    steps:
+      - name: SSH to server
+        uses: appleboy/ssh-action@v3
+        with:
+          hostname: 74.207.246.181
+          username: root
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          command: echo "Hello from GitHub Actions"
