@@ -12,7 +12,6 @@ jobs:
       - name: SSH to server
         uses: appleboy/ssh-action@v0.1.10
         with:
-          hostname: 74.207.246.181
+          host: 74.207.246.181
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          command: echo "Hello from GitHub Actions"
