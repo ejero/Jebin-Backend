@@ -15,10 +15,12 @@ app.use((req, res, next) => {
 // Defining Routers
 const router = require(path.join(__dirname, "routes", "accounts"));
 const routerUser = require(path.join(__dirname, "routes", "user"));
+const routerCalls = require(path.join(__dirname, "routes", "calls"));
 
 // connecting server to router
 // Testing comment
 app.use("/", router);
 app.use("/user", routerUser);
+app.use("/calls", routerCalls);
 
 module.exports = { app, sequelize };
